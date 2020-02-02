@@ -1,5 +1,5 @@
 #Ignore any IntelliJ specific files
-*/.idea
+/*/.idea
 
 #Ignore any out files
-*/out
+/*/out
