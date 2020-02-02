@@ -61,7 +61,7 @@ public class Simulation {
     }
 
     public static void main(String[] args) {
-        Ride firstRide = Parser.readSimulation("a_example.in").getRides().get(0);
+        Ride firstRide = Parser.readSimulation("2018 - Self driving rides/a_example.in").getRides().get(0);
         System.out.println("THE FIRST RIDE READ IN HAS START " + firstRide.getStartPoint().getX() + firstRide.getStartPoint().getY() + " AND END POINT " + firstRide.getEndPoint().getX() +firstRide.getEndPoint().getY());
 
     }
