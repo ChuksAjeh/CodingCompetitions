@@ -59,7 +59,7 @@ public class Parser {
         ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
         int cnt =0;
         for(int i=0; i<numVehicles; i++){
-            vehicles.add(new Vehicle(i++));
+            vehicles.add(new Vehicle());
         }
 
         while(in.hasNextLine() && cnt < numRides ){
