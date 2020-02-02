@@ -1,7 +1,7 @@
 # Google Hash Code Practice
 This is simply a repo consisting of all the past years problems that we will be working on in the weeks leading to Google Hash Code 2020.
 
-#### Leaderboard found at:
+#### Leaderboards found at:
 [Swansea Hash Judge](https://cshashjudge.swan.ac.uk/)
 
 ## How to find each years problem
