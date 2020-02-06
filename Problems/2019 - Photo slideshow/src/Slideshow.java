@@ -5,10 +5,15 @@ public class Slideshow {
     int score;
 
     public Slideshow(ArrayList<Photo> randomPhotos){
-        createSlides(randomPhotos);
-        //TODO: Calculate score for slideshow
-        //TODO: Create slides
-        //TODO: Order slides
+        if(randomPhotos.isEmpty() == true){
+            throw new IllegalStateException("Must pass in atleast 1 photo");
+        }
+        else{
+            createSlides(randomPhotos);
+            //TODO: Create slides
+            //TODO: Order slides
+            //TODO: Calculate score for slideshow
+        }
     }
 
     public static void main(String[] args) {
@@ -16,15 +21,28 @@ public class Slideshow {
         System.out.println(test.slides.get(0).getPhoto(2).photoID);
     }
 
-    public void calculateScore(){
-        //TODO: Find intersection of tags
+    public int calculateScore(){
+        int score = 0;
+        if(slides.size() == 1){
+            return score;
+        }
+        //TODO: Else if find intersection of tags
+        return 0;
     }
 
     public void createSlides(ArrayList<Photo> randomPhotos){
+        //THIS IS FOR THE SAKE OF TESTING
+        //TODO: Create slides based on spec
         Slide someSlide = new Slide(randomPhotos.get(0), randomPhotos.get(1));
         slides.add(someSlide);
 
     }
 
-    //TODO: Order/re-order slides
+    public void orderSlides(){
+        //TODO: Order slides based on common tags, remove tags unrelated to neighbours
+    }
+
+    //CONSIDER A PRIVATE "compareSlides" METHOD TO COMPARE 2 SLIDES FOR COMMON TAGS AND RETURN int - Can use this in "orderSlides"
+
+
 }

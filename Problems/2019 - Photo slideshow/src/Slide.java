@@ -1,15 +1,17 @@
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class Slide {
     Photo mainPhoto;
     Photo optionalPhoto;
 
-    //TODO: Enforce 2 pictures must be vertical
-    //This is easy simply if photo1.isVertical == false then throw error
-    public Slide(Photo photo1, Photo photo2){
-        mainPhoto = photo1;
-        optionalPhoto = photo2;
+    public Slide(Photo firstPhoto, Photo secondPhoto){
+        if(firstPhoto.isVertical == false || secondPhoto.isVertical == false){
+            throw new IllegalArgumentException("You cannot have a slide without 2 vertical photos");
+        }
+        else{
+            mainPhoto = firstPhoto;
+            optionalPhoto = secondPhoto;
+        }
     }
 
     public Slide(Photo mainPhoto){
