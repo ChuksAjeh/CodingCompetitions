@@ -12,3 +12,6 @@ Just go to [Problems](https://github.com/ChuksAjeh/SwanHash/tree/master/Problems
 2. Start coding
 3. Create a Pull Request to master (**stable states only please**)
 4. Merge if deemed fitting
+
+## Teamlink for joining (max 4 of us):
+https://hashcodejudge.withgoogle.com/#join-team/4582751080546304/Rgb3OQT85v1glqP9wFnLZneTxaWBT0dFQkan3bJl4MA
