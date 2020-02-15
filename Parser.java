@@ -25,8 +25,4 @@ public class Parser {
 		return lines;
 	}
 
-	public static void handleLines(ArrayList<String> lines) {
-		// TODO: per case implementation of file
-	}
-
 }
