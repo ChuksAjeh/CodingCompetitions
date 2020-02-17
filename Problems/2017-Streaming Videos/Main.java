@@ -1,6 +1,11 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+import javafx.util.Pair;
 
 public class Main {
 
@@ -65,6 +70,59 @@ public class Main {
 		// TODO: All data read from file, calculation and output needed.
 
 		// First idea is to use give attention to the biggest requests first.
+		ArrayList<Request> requestlist = new ArrayList<>();
+		for (Endpoint e : endpoints) {
+			requestlist.addAll(e.getRequests());
+		}
+		requestlist.sort(Comparator.comparing(Request::getAmmount));
+		Collections.reverse(requestlist);
+
+		while (!requestlist.isEmpty()) {
+			Request currentRequest = requestlist.get(0);
+			ArrayList<Connection> possibleConnections = endpoints[currentRequest
+					.getEndpointID()].getConnections();
+			possibleConnections
+					.sort(Comparator.comparing(Connection::getLatency));
+			boolean added = false;
+			int i = 0;
+			while (!added) {
+				if (i < possibleConnections.size()) {
+					try {
+						servers[possibleConnections.get(i).getCacheID()]
+								.addVideo(videos[currentRequest.getVideoID()]);
+						added = true;
+						System.out.println("video "
+								+ currentRequest.getVideoID() + " on server "
+								+ possibleConnections.get(i).getCacheID());
+					} catch (IllegalArgumentException e) {
+						i++;
+					}
+				} else {
+					System.out.println(currentRequest.getVideoID()
+							+ " No server just data center");
+					added = true;
+				}
+			}
+			requestlist.remove(0);
+		}
+
+		// All cache servers have been assigned the relevant videos (albeit with
+		// very ducktapey code)
+		// Now just generate the output
+		FileWriter fw = new FileWriter("src/out.txt");
+		int serversUsed = 0;
+		for (int j = 0; j < servers.length; j++) {
+			if (servers[j].getVideos().size() > 0) {
+				serversUsed++;
+			}
+		}
+		fw.write(String.valueOf(serversUsed));
+		for (int j = 0; j < servers.length; j++) {
+			if (servers[j].getVideos().size() > 0) {
+				fw.write("\n" + servers[j].toString());
+			}
+		}
+		fw.close();
 	}
 
 	/**

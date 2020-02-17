@@ -5,9 +5,9 @@ import javafx.util.Pair;
 public class Endpoint {
 
 	private final int ID;
-	private ArrayList<Pair<Integer, Integer>> requests;
+	private ArrayList<Request> requests;
 	private final int centerLatency;
-	private ArrayList<Pair<Integer, Integer>> connections;
+	private ArrayList<Connection> connections;
 
 	public Endpoint(int ID, int centerLatency) {
 		requests = new ArrayList<>();
@@ -25,18 +25,20 @@ public class Endpoint {
 	}
 
 	public void addRequest(int videoID, int number) {
-		Pair<Integer, Integer> request = new Pair<Integer, Integer>(videoID,
-				number);
+		Request request = new Request(videoID, ID, number);
 		requests.add(request);
 	}
 
 	public void addConnection(int serverID, int latency) {
-		Pair<Integer, Integer> connection = new Pair<Integer, Integer>(serverID,
-				latency);
+		Connection connection = new Connection(serverID, ID, latency);
 		connections.add(connection);
 	}
 
-	public ArrayList<Pair<Integer, Integer>> getRequests() {
+	public ArrayList<Connection> getConnections() {
+		return connections;
+	}
+
+	public ArrayList<Request> getRequests() {
 		return requests;
 	}
 }

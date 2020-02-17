@@ -20,12 +20,26 @@ public class CS {
 		}
 	}
 
+	public ArrayList<Video> getVideos() {
+		return videos;
+	}
+
+	public void setVideos(ArrayList<Video> videos) {
+		this.videos = videos;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
 	public String toString() {
+
 		String output = String.valueOf(ID);
 		for (Video video : videos) {
 			output = output + " " + video.getID();
 		}
 		return output;
+
 	}
 
 	public int getID() {
