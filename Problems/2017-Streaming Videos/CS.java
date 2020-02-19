@@ -12,11 +12,11 @@ public class CS {
 	}
 
 	public void addVideo(Video video) throws IllegalArgumentException {
-		if (video.getSize() < capacity) {
+		if (video.getSize() > capacity || videos.contains(video)) {
+			throw new IllegalArgumentException();
+		} else {
 			videos.add(video);
 			capacity -= video.getSize();
-		} else {
-			throw new IllegalArgumentException();
 		}
 	}
 
@@ -46,3 +46,4 @@ public class CS {
 		return ID;
 	}
 }
+
