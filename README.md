@@ -13,5 +13,11 @@ Just go to [Problems](https://github.com/ChuksAjeh/SwanHash/tree/master/Problems
 3. Create a Pull Request to master (**stable states only please**)
 4. Merge if deemed fitting
 
-## Teamlink for joining (max 4 of us):
-https://hashcodejudge.withgoogle.com/#join-team/4582751080546304/Rgb3OQT85v1glqP9wFnLZneTxaWBT0dFQkan3bJl4MA
+## Leaderboard (we placed 7228th):
+#### Search for "The Great Hash 🐙🐧" ↓↓↓
+https://hashcodejudge.withgoogle.com/#/rounds/6313004828196864/scoreboards
+- Our main problem was we didn't handle books that had already been scanned (this fix meant a greater score but unfortunately we overlooked it during the 3hr45 competition time limit).
+- In future (2020 onwards) we will assign:
+  * 1 team member to closely look through the datasets to start
+  * 1 team member solving the example input by hand (to secure atleast 1 position on the leaderboard)
+  * 2 team members to work on the solution using a pair programming technique (***"driver ↔ navigator"** approach*).
